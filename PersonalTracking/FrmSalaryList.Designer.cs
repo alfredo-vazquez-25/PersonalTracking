@@ -35,7 +35,7 @@ namespace PersonalTracking
             this.label6 = new System.Windows.Forms.Label();
             this.cmbDeparment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +48,9 @@ namespace PersonalTracking
             this.rbEqual = new System.Windows.Forms.RadioButton();
             this.rbLess = new System.Windows.Forms.RadioButton();
             this.rbMore = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cmbMonth = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,7 +84,7 @@ namespace PersonalTracking
             this.pnlForAdmin.Controls.Add(this.label6);
             this.pnlForAdmin.Controls.Add(this.cmbDeparment);
             this.pnlForAdmin.Controls.Add(this.label5);
-            this.pnlForAdmin.Controls.Add(this.textBox1);
+            this.pnlForAdmin.Controls.Add(this.txtSurname);
             this.pnlForAdmin.Controls.Add(this.label3);
             this.pnlForAdmin.Controls.Add(this.txtName);
             this.pnlForAdmin.Controls.Add(this.label2);
@@ -120,6 +120,7 @@ namespace PersonalTracking
             this.cmbDeparment.Name = "cmbDeparment";
             this.cmbDeparment.Size = new System.Drawing.Size(121, 21);
             this.cmbDeparment.TabIndex = 3;
+            this.cmbDeparment.SelectedIndexChanged += new System.EventHandler(this.cmbDeparment_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -130,12 +131,12 @@ namespace PersonalTracking
             this.label5.TabIndex = 25;
             this.label5.Text = "Department";
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtSurname.Location = new System.Drawing.Point(74, 55);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(121, 20);
+            this.txtSurname.TabIndex = 2;
             // 
             // label3
             // 
@@ -183,9 +184,9 @@ namespace PersonalTracking
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.cmbMonth);
+            this.panel3.Controls.Add(this.txtYear);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtSalary);
             this.panel3.Controls.Add(this.label4);
@@ -203,6 +204,7 @@ namespace PersonalTracking
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -212,6 +214,7 @@ namespace PersonalTracking
             this.btnSearch.TabIndex = 4;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 
@@ -257,29 +260,29 @@ namespace PersonalTracking
             this.rbMore.Text = "More";
             this.rbMore.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(465, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(465, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(165, 20);
-            this.textBox2.TabIndex = 1;
-            // 
             // cmbMonth
             // 
-            this.cmbMonth.AutoSize = true;
-            this.cmbMonth.Location = new System.Drawing.Point(422, 11);
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(465, 8);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(37, 13);
-            this.cmbMonth.TabIndex = 32;
-            this.cmbMonth.Text = "Month";
+            this.cmbMonth.Size = new System.Drawing.Size(165, 21);
+            this.cmbMonth.TabIndex = 0;
+            // 
+            // txtYear
+            // 
+            this.txtYear.Location = new System.Drawing.Point(465, 35);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.Size = new System.Drawing.Size(165, 20);
+            this.txtYear.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(422, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Month";
             // 
             // label7
             // 
@@ -376,6 +379,7 @@ namespace PersonalTracking
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmSalaryList";
             this.Text = "FrmSalaryList";
+            this.Load += new System.EventHandler(this.FrmSalaryList_Load);
             this.panel1.ResumeLayout(false);
             this.pnlForAdmin.ResumeLayout(false);
             this.pnlForAdmin.PerformLayout();
@@ -404,7 +408,7 @@ namespace PersonalTracking
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbDeparment;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
@@ -414,9 +418,9 @@ namespace PersonalTracking
         private System.Windows.Forms.RadioButton rbEqual;
         private System.Windows.Forms.RadioButton rbLess;
         private System.Windows.Forms.RadioButton rbMore;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label cmbMonth;
+        private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.TextBox txtYear;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label label4;

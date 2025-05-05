@@ -31,7 +31,7 @@ namespace PersonalTracking
         {
             this.txtUserNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dpFinish = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.dpStart = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,12 +60,13 @@ namespace PersonalTracking
             this.label1.TabIndex = 11;
             this.label1.Text = "User No";
             // 
-            // dpFinish
+            // dpEnd
             // 
-            this.dpFinish.Location = new System.Drawing.Point(131, 119);
-            this.dpFinish.Name = "dpFinish";
-            this.dpFinish.Size = new System.Drawing.Size(200, 20);
-            this.dpFinish.TabIndex = 1;
+            this.dpEnd.Location = new System.Drawing.Point(131, 119);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(200, 20);
+            this.dpEnd.TabIndex = 1;
+            this.dpEnd.ValueChanged += new System.EventHandler(this.dpEnd_ValueChanged);
             // 
             // dpStart
             // 
@@ -73,6 +74,7 @@ namespace PersonalTracking
             this.dpStart.Name = "dpStart";
             this.dpStart.Size = new System.Drawing.Size(200, 20);
             this.dpStart.TabIndex = 0;
+            this.dpStart.ValueChanged += new System.EventHandler(this.dpStart_ValueChanged);
             // 
             // label8
             // 
@@ -144,6 +146,7 @@ namespace PersonalTracking
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmPermission
             // 
@@ -156,7 +159,7 @@ namespace PersonalTracking
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDayAmount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dpFinish);
+            this.Controls.Add(this.dpEnd);
             this.Controls.Add(this.dpStart);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -164,6 +167,7 @@ namespace PersonalTracking
             this.Controls.Add(this.label1);
             this.Name = "FrmPermission";
             this.Text = "FrmPermission";
+            this.Load += new System.EventHandler(this.FrmPermission_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +177,7 @@ namespace PersonalTracking
 
         private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dpFinish;
+        private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

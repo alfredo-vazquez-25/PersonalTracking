@@ -32,7 +32,7 @@ namespace PersonalTracking
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtContent = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@ namespace PersonalTracking
             // 
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtContent);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtTitle);
             this.panel1.Controls.Add(this.label4);
@@ -99,13 +99,13 @@ namespace PersonalTracking
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox2
+            // txtContent
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 198);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(319, 125);
-            this.textBox2.TabIndex = 2;
+            this.txtContent.Location = new System.Drawing.Point(109, 198);
+            this.txtContent.Multiline = true;
+            this.txtContent.Name = "txtContent";
+            this.txtContent.Size = new System.Drawing.Size(319, 125);
+            this.txtContent.TabIndex = 2;
             // 
             // label7
             // 
@@ -305,7 +305,7 @@ namespace PersonalTracking
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label4;

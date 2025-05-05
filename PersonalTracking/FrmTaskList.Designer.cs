@@ -38,7 +38,7 @@ namespace PersonalTracking
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
             this.rbStartDate = new System.Windows.Forms.RadioButton();
-            this.dpFinish = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.dpStart = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@ namespace PersonalTracking
             this.label6 = new System.Windows.Forms.Label();
             this.cmbDeparment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,7 +86,7 @@ namespace PersonalTracking
             this.panel3.Controls.Add(this.cmbTaskState);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Controls.Add(this.dpFinish);
+            this.panel3.Controls.Add(this.dpEnd);
             this.panel3.Controls.Add(this.dpStart);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
@@ -105,6 +105,7 @@ namespace PersonalTracking
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -114,6 +115,7 @@ namespace PersonalTracking
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbTaskState
             // 
@@ -164,12 +166,12 @@ namespace PersonalTracking
             this.rbStartDate.Text = "Start Date";
             this.rbStartDate.UseVisualStyleBackColor = true;
             // 
-            // dpFinish
+            // dpEnd
             // 
-            this.dpFinish.Location = new System.Drawing.Point(87, 83);
-            this.dpFinish.Name = "dpFinish";
-            this.dpFinish.Size = new System.Drawing.Size(200, 20);
-            this.dpFinish.TabIndex = 1;
+            this.dpEnd.Location = new System.Drawing.Point(87, 83);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(200, 20);
+            this.dpEnd.TabIndex = 1;
             // 
             // dpStart
             // 
@@ -211,7 +213,7 @@ namespace PersonalTracking
             this.pnlForAdmin.Controls.Add(this.label6);
             this.pnlForAdmin.Controls.Add(this.cmbDeparment);
             this.pnlForAdmin.Controls.Add(this.label5);
-            this.pnlForAdmin.Controls.Add(this.textBox1);
+            this.pnlForAdmin.Controls.Add(this.txtSurname);
             this.pnlForAdmin.Controls.Add(this.label3);
             this.pnlForAdmin.Controls.Add(this.txtName);
             this.pnlForAdmin.Controls.Add(this.label2);
@@ -247,6 +249,7 @@ namespace PersonalTracking
             this.cmbDeparment.Name = "cmbDeparment";
             this.cmbDeparment.Size = new System.Drawing.Size(121, 21);
             this.cmbDeparment.TabIndex = 3;
+            this.cmbDeparment.SelectedIndexChanged += new System.EventHandler(this.cmbDeparment_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -257,12 +260,12 @@ namespace PersonalTracking
             this.label5.TabIndex = 15;
             this.label5.Text = "Department";
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtSurname.Location = new System.Drawing.Point(100, 83);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(121, 20);
+            this.txtSurname.TabIndex = 2;
             // 
             // label3
             // 
@@ -412,7 +415,7 @@ namespace PersonalTracking
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
@@ -430,7 +433,7 @@ namespace PersonalTracking
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbDeliveryDate;
         private System.Windows.Forms.RadioButton rbStartDate;
-        private System.Windows.Forms.DateTimePicker dpFinish;
+        private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSearch;

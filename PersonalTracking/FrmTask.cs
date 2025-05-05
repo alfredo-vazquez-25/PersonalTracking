@@ -97,7 +97,25 @@ namespace PersonalTracking
         Task task = new Task();
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+            if (task.EmployeeID == 0)
+                MessageBox.Show("Please select an employee on table");
+            else if (txtTitle.Text.Trim() == "")
+                MessageBox.Show("Task Title is empty");
+            else if (txtContent.Text.Trim() == "")
+                MessageBox.Show("Content is empty");
+            else
+            {
+                task.TaskTitle = txtTitle.Text;
+                task.TaskContent = txtContent.Text;
+                task.TaskStartDate = DateTime.Today;
+                task.TaskState = 1;
+                TaskBLL.AddTask(task);
+                MessageBox.Show("Task was added");
+                txtTitle.Clear();
+                txtContent.Clear();
+                task = new Task();
+
+            }
         }
     }
 }
